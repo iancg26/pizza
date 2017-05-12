@@ -24,6 +24,14 @@ $(function() {
   setupPizzaBuilder(workingPizza);
   deliveryListener(workingOrder);
 
+  $("#" + pizza.pizzaSize).prop("checked", true);
+    $("input[value='cheese']").prop("checked", true);
+    pizza.pizzaToppings.push("cheese");
+    addToppingToPizzaBuilderList("cheese");
+    updatePizzaCost(pizza);
+    beginSizeListener(pizza);
+    beginToppingListener(pizza);
+
 $("#add-to-order").on("submit", function(event) {
     event.preventDefault();
     workingOrder.addPizza(workingPizza);
@@ -44,14 +52,4 @@ var setupPizzaBuilder = function(pizza) {
   "</div>"
 );
 }
-}
-
-
-$("#" + pizza.pizzaSize).prop("checked", true);
-  $("input[value='cheese']").prop("checked", true);
-  pizza.pizzaToppings.push("cheese");
-  addToppingToPizzaBuilderList("cheese");
-  updatePizzaCost(pizza);
-  beginSizeListener(pizza);
-  beginToppingListener(pizza);
-};
+});

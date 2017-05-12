@@ -10,9 +10,9 @@
       <div class="container">
         <h1>Pizza Order</h1>
         <div class="col-md-6 pizza-generator">
-          <form id="add-to-order">
+          <form id="create-order">
               <div class="form-group">
-                <h3>Select Pizza Size</h3>
+                <h4>Select Pizza Size</h4>
                 <div class="radio">
                   <label>
                     <input type="radio" name="pizza-size" class="pizza-size" id="small" value="small">
@@ -31,10 +31,22 @@
                     Large (12")
                   </label>
                 </div>
-                <h3>Select Pizza Toppings</h3>
+                <h4>Select Pizza Toppings</h4>
                 <div class="topping-checkboxes"></div>
               </div>
-      
+              <div class="working-pizza">
+                <h3>Your Pizza</h>
+                <ul class="list-unstyled">
+                  <li><strong>Cost:&nbsp;</strong><span class="working-cost">$10.00</span></li>
+                  <li><strong>Size:&nbsp;</strong><span class="working-size">Medium</span></li>
+                  <li><strong>Toppings:</strong>
+                      <ul class="working-toppings"></ul>
+                  </li>
+                </ul>
+                
+              <button type="submit" class="btn">Order</button>
+
+          </form>
         </div>
       </div>
     </body>

@@ -17,3 +17,41 @@ var sizeCosts = {
 
 
 // UI logic
+$(function() {
+  var pizzaIdCounter = 0;
+  var workingOrder = new Order();
+  var workingPizza = new Pizza(pizzaIdCounter, "Medium");
+  setupPizzaBuilder(workingPizza);
+  deliveryListener(workingOrder);
+
+$("#add-to-order").on("submit", function(event) {
+    event.preventDefault();
+    workingOrder.addPizza(workingPizza);
+    updateOrder(workingOrder);
+    pizzaIdCounter++;
+    workingPizza = new Pizza(pizzaIdCounter, "Medium");
+    setupPizzaBuilder(workingPizza);
+  });
+
+var setupPizzaBuilder = function(pizza) {
+  $(".topping-checkboxes").empty();
+  $(".working-toppings").empty();
+  $(".topping-checkboxes").append(
+  "<div class='checkbox'>" +
+    "<label>" +
+      "<input type='checkbox' class='pizza-topping' value='" + topping + "'>" + topping + " " +
+    "</label>" +
+  "</div>"
+);
+}
+}
+
+
+$("#" + pizza.pizzaSize).prop("checked", true);
+  $("input[value='cheese']").prop("checked", true);
+  pizza.pizzaToppings.push("cheese");
+  addToppingToPizzaBuilderList("cheese");
+  updatePizzaCost(pizza);
+  beginSizeListener(pizza);
+  beginToppingListener(pizza);
+};

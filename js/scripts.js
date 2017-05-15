@@ -101,3 +101,25 @@ Pizza.prototype.pizzaCostCalc = function() {
   });
   this.pizzaCost = totalPrice;
 };
+
+//UI Logic
+$("document").ready(function() {
+  $("button#order").click(function() {
+    var thisPizza = new Pizza;
+    var newSize = $('input:radio[name="size"]:checked').val();
+    var newCrust = $('input:radio[name="crust"]:checked').val();
+    var newSauce = $('input:radio[name="sauce"]:checked').val();
+    var newToppings = toppingAssemble();
+    var thisSize = new Size(newSize);
+    var thisCrust = new Crust(newCrust);
+    var thisSauce = new Sauce(newSauce);
+    thisPizza.baseAdd(thisSize);
+    thisPizza.baseAdd(thisCrust);
+    thisPizza.baseAdd(thisSauce);
+    thisPizza.pizzaToppings=newToppings;
+    thisPizza.pizzaPriceCalc();
+    var finalCost = thisPizza.pizzaPrice;
+    $("#total").show();
+    $("#totalCost").text(finalCost);
+  });
+});

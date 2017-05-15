@@ -45,8 +45,6 @@ function Sauce(sauce) {
   var sauces = [
     {sauceName: "tomato", basePrice: 0},
     {sauceName: "pesto", basePrice: 1},
-    {sauceName: "alfredo", basePrice: 2},
-    {sauceName: "garlic", basePrice: 0},
   ];
   function findSauce(sa) {
     for (i=0; i < sauces.length; i++) {
@@ -105,6 +103,7 @@ Pizza.prototype.pizzaCostCalc = function() {
 //UI Logic
 $("document").ready(function() {
   $("button#order").click(function() {
+    event.preventDefault();
     var thisPizza = new Pizza;
     var newSize = $('input:radio[name="size"]:checked').val();
     var newCrust = $('input:radio[name="crust"]:checked').val();

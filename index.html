@@ -9,52 +9,61 @@
     <body>
       <div class="container">
         <h1>Pizza Order</h1>
-        <div class="col-md-6 pizza-generator">
-          <div class="pizza-maker">
-          <form id="create-order">
-              <div class="form-group">
-                <h4>Select Pizza Size</h4>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="pizza-size" class="pizza-size" id="small" value="personal">
-                    Personal (8")
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="pizza-size" class="pizza-size" id="medium" value="medium">
-                    Medium (10")
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="pizza-size" class="pizza-size" id="large" value="large">
-                    Large (12")
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="pizza-size" class="pizza-size" id="xlarge" value="large">
-                    X-Large (14")
-                  </label>
-                </div>
-                <h4>Select Pizza Toppings</h4>
-                <div class="topping-checkboxes"></div>
-              </div>
-              <div class="working-pizza">
-                <h3>Your Pizza</h>
-                <ul class="list-unstyled">
-                  <li><strong>Cost:&nbsp;</strong><span class="working-cost">$10.00</span></li>
-                  <li><strong>Size:&nbsp;</strong><span class="working-size">Medium</span></li>
-                  <li><strong>Toppings:</strong>
-                      <ul class="working-toppings"></ul>
-                  </li>
-                </ul>
-
-              <button id= "order" type="submit" class="btn">add to order</button>
-            </div>
+        <div class="row">
+          <div class="col-xs-4">
+          <h3>Sizes</h3>
+          <form>
+              <p><input type="radio" name="size" value="personal" checked> Personal</p>
+              <p><input type="radio" name="size" value="medium"> Medium</p>
+              <p><input type="radio" name="size" value="large"> Large</p>
+              <p><input type="radio" name="size" value="xlarge">  X-Large</p>
           </form>
+        </div>
+        <div class="col-xs-4">
+          <h3>Crust</h3>
+          <form>
+              <p><input type="radio" name="crust" value="original" checked> Original</p>
+              <p><input type="radio" name="crust" value="thincrust"> Thin Crust</p>
+              <p><input type="radio" name="crust" value="deepdish"> Deep Dish</p>
+          </form>
+        </div>
+        <div class="col-xs-4">
+          <h3>Sauces</h3>
+          <form>
+              <p><input type="radio" name="sauce" value="tomato" checked> Red Sauce</p>
+              <p><input type="radio" name="sauce" value="pesto"> White Sauce</p>
+          </form>
+        </div>
+        <div id="toppings">
+          <h2>Toppings</h2>
+          <div class="col-xs-4" id="cheeses">
+            <h3>Cheeses</h3>
+              <input type="checkbox" name="cheese" value="mozzarella" checked>Mozzarella<br>
+              <input type="checkbox" name="cheese"  value="cheddar">Cheddar<br>
+              <input type="checkbox" name="cheese" value="feta">Feta<br>
+        </div>
+        <div class="col-xs-4" id="veggies">
+          <h3>Veggies</h3>
+            <input type="checkbox" class="veggie" name="veggie" value="peppers"> Peppers<br>
+            <input type="checkbox" class="veggie" name="veggie" value="onions"> Onions<br>
+            <input type="checkbox" class="veggie" name="veggie" value="mushrooms"> Mushrooms<br>
+            <input type="checkbox" class="veggie" name="veggie" value="kalamatas">Olives<br>
+            <input type="checkbox" class="veggie"
+             name="veggie" value="spinach"> Spinach<br>
+        </div>
+        <div class="col-xs-4" id="meats">
+          <h3>Meats</h3>
+          <input type="checkbox" class="meat" name="meat" value="pepperoni"> Pepperoni<br>
+          <input type="checkbox" class="meat" name="meat" value="sausage"> Sausage<br>
+          <input type="checkbox" class="meat" name="meat" value="canadian"> Canadian Bacon<br>
+          <input type="checkbox" class="meat" name="meat" value="chicken"> Chicken<br>
+        </div>
+      </div>
+      <div class="container">
+      </div>
+          <button type="button" name="button" id="pizzaOven">Place Order!</button>
+          <span id="total"><p>Your total will be $<span id="totalCost"></span>.00</p></span>
         </div>
       </div>
     </body>
-</html>
+  </html>
